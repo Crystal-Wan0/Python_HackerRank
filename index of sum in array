@@ -1,0 +1,17 @@
+def target-sum(nums, target):
+  index = []
+  l = len(nums)
+  for i in range (l):
+    for j in range(i+1, l):
+      if nums[i] + nums[j] == target:
+        index.append(i)
+        index.append(j)
+        
+  return index
+  
+  
+  #Another solution:
+  def target_sum(nums, target):
+    for idx, val in enumerate(nums):
+        if target - val in nums[idx + 1:]:
+            return [idx, nums[idx + 1:].index(target - val) + (idx + 1)]
