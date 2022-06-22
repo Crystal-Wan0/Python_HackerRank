@@ -1,0 +1,22 @@
+# True case
+array = [5, 1, 22, 25, 6, -1, 8, 10]
+sequence_1 = [1, 6, -1, 10]
+
+# True case
+array2 = [5, 1, 22, 25, 6, -1, 8, 10]
+sequence_2 = [-1]
+
+# False case
+array3 = [5, 1, 22, 25, 6, -1, 8, 10]
+sequence_3 = [8, 1]
+
+
+def isValidSubsequence(array, sequence): 
+    ptr = 0
+    for i in range(len(array)):
+        if ptr >= len(sequence) - 1:
+            return True
+        if array[i] == sequence[ptr]:
+            ptr += 1
+        
+    return False
