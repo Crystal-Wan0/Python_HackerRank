@@ -1,3 +1,5 @@
+# return the 2 indexes in an array that their sum equals the target
+
 def target-sum(nums, target):
   index = []
   l = len(nums)
@@ -13,5 +15,5 @@ def target-sum(nums, target):
   #Another solution:
   def target_sum(nums, target):
     for idx, val in enumerate(nums):
-        if target - val in nums[idx + 1:]:
+        if target - val in nums[idx + 1:]:  # if element is in the arr (with the range of index + 1 to the end) equals target - (the current value)
             return [idx, nums[idx + 1:].index(target - val) + (idx + 1)]
