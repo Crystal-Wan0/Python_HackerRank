@@ -1,15 +1,17 @@
+# convert int array into large integer with digits, then plus one, then return the result array
+
 def plus_one(digits):
     num = ""
 
     for i in digits:
-        num +=str(i)
+        num +=str(i) # convert element in arrr to string
 
-    num = int(num)
+    num = int(num)  # convert to num
     num += 1
-    num = str(num)
+    num = str(num) #convert back to string
     ans = []
 
     for i in num:
-        ans.append(int(i))
+        ans.append(int(i)) #convert every char of string into int, then append it to the arr
         
     return ans
