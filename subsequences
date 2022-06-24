@@ -10,13 +10,12 @@ sequence_2 = [-1]
 array3 = [5, 1, 22, 25, 6, -1, 8, 10]
 sequence_3 = [8, 1]
 
-
 def isValidSubsequence(array, sequence): 
-    ptr = 0
-    for i in range(len(array)):
-        if ptr >= len(sequence) - 1:
+    i = 0
+    for x in array:
+        if(i>=len(sequence)):
             return True
-        if array[i] == sequence[ptr]:
-            ptr += 1
-        
+        if(x == sequence[i]):
+            i +=1 
+    
     return False
