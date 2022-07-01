@@ -1,0 +1,33 @@
+# find the shortest distance between the two words
+
+# Input:
+# S = [ "the", "quick", "brown", "fox", 
+#      "quick"]
+# word1 = "the"
+# word2 = "fox"
+# Output: 3
+
+# Input:
+# S = ["geeks", "for", "geeks", "contribute", 
+#      "practice"]
+# word1 = "geeks"
+# word2 = "practice”
+# Output: 2
+
+# [the, low, quick, the, brown, fox, quick, fox]
+# word1 = the
+# word2 = quick
+# Output: 1
+
+def word_distance(word_list, word1, word2):
+    # Write your code here
+    l= d = len(word_list)
+    p = -1
+    for i in range(l):
+        if (word_list[i] == word1 or word_list[i] == word2):
+            if (p!= -1 and word_list[i]!=word_list[p]):
+                d = min (abs(i-p), d)
+            p = i  // remember the index at word1 in the list
+    if (d == l):
+        return -1
+    return d
